@@ -15,6 +15,8 @@
         #part2 {position:absolute;left:920px;top:80px;}
         .pic_line {position:relative;margin-top: 10px;}
         #chooseFile {visibility: hidden;}
+        .fileInput {visibility: hidden;}
+        #image-show {position:absolute;margin-top:-280px;width:200px;height:240px;margin-left:180px}
     </style>
 </head>
     <body>
@@ -32,10 +34,15 @@
                 <input type="submit" style="left:240px;position:relative;" value="store">
                 <form method="post" enctype="multipart/form-data">
                     <label for="chooseFile">
-                    <img src="Nature landscape.jpg" id="image-show" style="width:200px;height:150px;display:block;left:180px;top:20px;position:relative;">
+                    <img src="Nature landscape.jpg" style="width:200px;height:150px;display:block;left:180px;top:20px;position:relative;">
                     </label>
                     <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
                 </form>
+                <div class="fileInput">
+                    <p>FILE NAME: </p>
+                    <p id="fileName"></p>
+                </div>
+                <div id="image-show"></div>
                 <textarea style="width:500px;height:370px;top:20px;position:relative"></textarea>
             </div>
             <div id="part2">
@@ -144,13 +151,18 @@
             //이미지 source 가져오기
             newImage.src = URL.createObjectURL(file);   
 
-            newImage.style.width = "70%";
-            newImage.style.height = "70%";
+            newImage.style.width = "100%";
+            newImage.style.height = "100%";
             newImage.style.objectFit = "contain";
 
             //이미지를 image-show div에 추가
             var container = document.getElementById('image-show');
             container.appendChild(newImage);
+
+            var newImage_prt = document.getElementById('image-show').lastElementChild;
+  
+            //이미지는 화면에 나타나고
+            newImage_prt.style.visibility = "visible";
         };
 
         </script>
