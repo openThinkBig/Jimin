@@ -16,7 +16,6 @@
         .pic_line {position:relative;margin-top: 10px;}
         #chooseFile {visibility: hidden;}
         .fileInput {visibility: hidden;}
-        #image-show {position:absolute;margin-top:-280px;width:200px;height:240px;margin-left:180px}
     </style>
 </head>
     <body>
@@ -31,32 +30,26 @@
             <div id="part1">
                 <label for="tit" style="position:relative;">Title: </label>
                 <input type="text" id="tit" style="position:relative;">
-                <input type="submit" style="left:240px;position:relative;" value="store">
+                <input type="submit" style="left:240px;position:relative;" value="save" id="save">
                 <form method="post" enctype="multipart/form-data">
                     <label for="chooseFile">
-                    <img src="Nature landscape.jpg" style="width:200px;height:150px;display:block;left:180px;top:20px;position:relative;">
+                    <img src="Nature landscape.jpg" id="image-show" style="width:200px;height:150px;display:block;left:180px;top:20px;position:relative;">
                     </label>
-                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*">
                 </form>
                 <div class="fileInput">
                     <p>FILE NAME: </p>
                     <p id="fileName"></p>
                 </div>
-                <div id="image-show"></div>
-                <textarea style="width:500px;height:370px;top:20px;position:relative"></textarea>
+                <textarea style="width:500px;height:370px;top:-35px;position:relative"></textarea>
             </div>
             <div id="part2">
                 <span id="clickAddr"></span>
                 <span id="defaultAddr">서울특별시 중구 명동</span>
                 <div class="pic_line">
-                    <img src="Nature landscape.jpg" style="width:150px;height:100px;">
-                    <img src="Nature landscape.jpg" style="width:150px;height:100px;">
-                    <img src="Nature landscape.jpg" style="width:150px;height:100px;">
+                    <img src="Nature landscape.jpg" id="image-show" style="width:150px;height:100px;">
                 </div>
                 <div class="pic_line">
-                    <img src="Nature landscape.jpg" style="width:150px;height:100px;">
-                    <img src="Nature landscape.jpg" style="width:150px;height:100px;">
-                    <img src="Nature landscape.jpg" style="width:150px;height:100px;">
                 </div>
             </div>
         </div>
@@ -137,33 +130,40 @@
             geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
         }
 
-        function loadFile(input) {
-            var file = input.files[0];	//선택된 파일 가져오기
+        let imgData = localStorage.getItem('imgData');
+        $("#image-show").attr("src", imgData);
 
-            //미리 만들어 놓은 div에 text(파일 이름) 추가
-            var name = document.getElementById('fileName');
-            name.textContent = file.name;
+        const fileInput = document.getElementById("chooseFile");
+        var result;
 
-            //새로운 이미지 div 추가
-            var newImage = document.createElement("img");
-            newImage.setAttribute("class", 'img');
-
-            //이미지 source 가져오기
-            newImage.src = URL.createObjectURL(file);   
-
-            newImage.style.width = "100%";
-            newImage.style.height = "100%";
-            newImage.style.objectFit = "contain";
-
-            //이미지를 image-show div에 추가
-            var container = document.getElementById('image-show');
-            container.appendChild(newImage);
-
-            var newImage_prt = document.getElementById('image-show').lastElementChild;
-  
-            //이미지는 화면에 나타나고
-            newImage_prt.style.visibility = "visible";
+        // 파일 교체
+        fileInput.onchange = () => {
+            const selectedFile = fileInput.files[0];
+            console.log(selectedFile);
         };
+        $("#chooseFile").on("change", function (event){
+            var file = event.target.files[0];
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("#image-show").attr("src", e.target.result);
+                result = e.target.result;
+                console.log(result);
+                localStorage.setItem('imgData', result);
+            }
+
+            reader.readAsDataURL(file);
+        });
+
+        const save_element = document.getElementById("save"); // save 버튼이 클릭했을 때 이벤트를 등록시키기 위해 사용하는 변수입니다
+        var part_2 = document.getElementById("part2"); // save 버튼이 클릭됐을 때 출력될 div를 위해 사용하는 변수입니다
+
+        // add 버튼을 누른 뒤 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
+        save_element.addEventListener("click", function(){
+            part_2.style.display = "block";
+            $("#part1").hide();
+            
+        });
 
         </script>
     </body>
