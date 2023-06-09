@@ -63,7 +63,8 @@
             };  
 
         // 지도를 생성합니다    
-        var map = new kakao.maps.Map(mapContainer, mapOption); 
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+        let chk = 0; 
 
         // 주소-좌표 변환 객체를 생성합니다
         var geocoder = new kakao.maps.services.Geocoder();
@@ -76,10 +77,10 @@
 
         // add 버튼을 누른 뒤 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
         add_element.addEventListener("click", function(){
+            chk = 1; // add 클릭 시에만 지도에 정보를 추가할 수 있는 이벤트를 위해 add가 클릭됐는지 확인하는 변수입니다
             kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
             searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-
-                if (status === kakao.maps.services.Status.OK) {
+                if (status === kakao.maps.services.Status.OK && chk === 1) {
                     part_1.style.display = "block";
                     $("#part2").hide();
                     var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
@@ -162,7 +163,8 @@
         save_element.addEventListener("click", function(){
             part_2.style.display = "block";
             $("#part1").hide();
-            
+            alert("저장되었습니다.");
+            chk = 0;
         });
 
         </script>
