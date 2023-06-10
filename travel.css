@@ -1,0 +1,187 @@
+.menuWrapper{
+    background-color: aqua;
+    width: 300px;
+    margin-top:0;
+}
+
+.menuBtn {
+    position: absolute;
+    left: 250px;
+    background-color: rgb(255, 255, 255, 0);
+    border: none;
+}
+
+#line-wrapper {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+
+  .line {
+    background:#6d6d6d;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    width: 40px;
+    height: 7px; 
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    position: relative;
+  }
+
+.menu {
+    float: left;
+    background-color: lightgrey;
+    width: 250px;
+    height: 100vh;
+    margin-top: 0;
+}
+
+.profile {
+    width: 250px;
+}
+
+.menu div {
+    padding-left: 10px;
+    margin-bottom: 0;
+}
+
+.menu div p {
+    color: rgb(93, 93, 93);
+    margin-bottom: 5px;
+    padding-top: 50px;
+}
+
+.class {
+    z-index: 10;
+}
+
+#profileImg {
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+#name {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    font-size: 20px;
+    color: rgb(93, 93, 93);
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+li a:hover {
+    text-decoration: none;
+    background-color: rgb(120, 120, 120);
+    color: white;
+}
+
+.menuBtn {
+
+}
+
+#selectedMenu {
+    color: white;
+}
+
+
+
+
+#total {
+    width: 100%;
+    margin: 0;
+}
+
+.map_wrap {
+    max-width: 80vw;
+    height:75vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+#map {
+    position:relative;
+    overflow:hidden;
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+    margin-top: -150px;
+}
+
+#clickAddr {
+    display:block;
+    margin-top:-8px;
+    font-weight: normal;
+    z-index:100;
+    width: 300px;
+    height: 30px;
+}
+.bAddr {
+    padding:5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#part1 {
+    display: none;
+    margin-top:-120px;
+    margin-left:-20px;
+}
+
+.pic_line {
+    position:relative;
+    margin-top: 10px;
+}
+#chooseFile {
+    visibility: hidden;
+}
+.FileInput {
+    visibility: hidden;
+}
+
+#wrapperWrapper {
+    display: none;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#information {
+    display: none;
+}
+
+.total h1 {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-weight: bold;
+    font-size: 50px;
+    background-color: #eeeeee;
+    color:rgb(72, 80, 184);
+    width: 99vw;
+}
+
+#add {
+    margin-left:280px;
+    margin-top: 20px;
+}
+
+#wrapper {
+    margin-left:400px;
+    margin-top: -130px;
+}

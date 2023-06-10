@@ -4,61 +4,83 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>travel</title>
+    <title>Travel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="travel.css">
 
-    <style>
-        .map_wrap {position:relative;width:40%;height:600px;left:280px;}
-        #clickAddr, #defaultAddr {display:block;margin-top:-8px;font-weight: normal;}
-        .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-        #part1 {position:absolute;left:930px;top:80px;display:none}
-        #part2 {position:absolute;left:920px;top:80px;}
-        #part3 {position:absolute;left:930px;top:80px;display:none}
-        .pic_line {position:relative;margin-top: 10px;}
-        #chooseFile {visibility: hidden;}
-        .FileInput {visibility: hidden;}
-        
-    </style>
 </head>
     <body>
-        <div id="total">
-            <div>
-                <h2 style="position:relative;left:280px;">Travel</h2>
-                <button id="add" style="position:absolute;left:1400px;top:30px;display:inline;" onclick="newPic()">add</button>
-            </div>
-            <div class="map_wrap">
-                <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-            </div>
-            <div id="part1">
-                <label for="tit" style="position:relative;">Title: </label>
-                <input type="text" id="tit" style="position:relative;">
-                <input type="submit" style="left:240px;position:relative;" value="save" id="save">
-                <form method="post" enctype="multipart/form-data">
-                    <label for="chooseFile">
-                    <img src="Nature landscape.jpg" class="image-show" style="width:200px;height:150px;display:block;left:180px;top:20px;position:relative;">
-                    </label>
-                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*">
-                </form>
-                <div class="FileInput">
-                    <p>FILE NAME: </p>
-                    <p id="fileName"></p>
+        <div class="menuWrapper">
+            <div class="menu">
+                <div class="profile container-fluid text-center">
+                    <img id="profileImg" class="img-circle" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+                    <p id="name">닉네임</p>
                 </div>
-                <textarea style="width:500px;height:370px;top:-35px;position:relative"></textarea>
-            </div>
-            <div id="part2">
-                <span id="clickAddr"></span>
-                <span id="defaultAddr">서울특별시 중구 명동</span>
-                <div class="pic_line"> 
-                <!--사진 추가되는 공간-->   
-                <a href="#part3" onclick="hide(this)">
-                    <img src="plus.png" class="image-show" style="width:260px;height:200px;">
-                </a>
-                </div>
-            </div>
-            <div id="part3">
-                <img src="plus.png" class="image-show" style="width:200px;height:150px;;">
+                <div><p>MENU</p></div>
+                <ul>
+                    <li><a href="todo.html" >TODO</a></li>
+                    <li><a href="memo.html" >MEMO</a></li>
+                    <li><a href="travel.html" id="selectedMenu">TRAVEL</a></li>
+                    <li><a href="book.html" >BOOK</a></li>
+                    <li><a href="movie.html" >MOVIE</a></li>
+                </ul>
             </div>
         </div>
+    
+        <button class="menuBtn">
+            <div id="line-wrapper">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+            <!--<img src="/images/menu.png" alt="" height="80px">-->
+        </button>
+        <div class="container-fluid total">
+            <h1>Travel</h1>
+            <button id="add">add</button>
+            <div class="map_wrap">
+                <div id="map"></div>
+
+                <div id="part1">
+                    <div id="clickAddr"><p id="addrTxt"></p></div>
+                    <div>
+                        <label for="tit">Title: </label>
+                        <input type="text" id="tit">
+                    </div>
+                    <input type="submit" value="save" id="save" style="position:absolute; margin-left:350px; margin-top:-30px">
+                    <form method="post" enctype="multipart/form-data">
+                        <label for="chooseFile">
+                        <img src="Nature landscape.jpg" id="travleImg" class="image-show" style="width:200px;height:150px;display:block;margin-left:120px;margin-top:20px;">
+                        </label>
+                        <input type="file" id="chooseFile" name="chooseFile" accept="image/*">
+                    </form>
+                    <div class="FileInput">
+                        <p>FILE NAME: </p>
+                        <p id="fileName"></p>
+                    </div>
+                    <textarea id="text_are" style="width:400px;height:210px;margin-top:-30px"></textarea>
+                </div>
+
+            </div>
+
+            <div id="wrapper">
+                <input type="text" id="search">
+                <button onclick="search()"> search </button>           
+            </div>
+            <div id="wrapperWrapper">
+                <!--사진추가되는곳-->
+            </div>
+            <div id="information">
+                <!--정보나오는곳-->
+            </div>
+        </div>
+
 
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c10bcbe1d13946345e9b5271c7587340&libraries=services"></script>
         <script src="travel.js"></script>
