@@ -13,16 +13,18 @@
         .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
         #part1 {position:absolute;left:930px;top:80px;display:none}
         #part2 {position:absolute;left:920px;top:80px;}
+        #part3 {position:absolute;left:930px;top:80px;display:none}
         .pic_line {position:relative;margin-top: 10px;}
         #chooseFile {visibility: hidden;}
-        .fileInput {visibility: hidden;}
+        .FileInput {visibility: hidden;}
+        
     </style>
 </head>
     <body>
         <div id="total">
             <div>
                 <h2 style="position:relative;left:280px;">Travel</h2>
-                <button id="add" style="position:absolute;left:1400px;top:30px;display:inline;">add</button>
+                <button id="add" style="position:absolute;left:1400px;top:30px;display:inline;" onclick="newPic()">add</button>
             </div>
             <div class="map_wrap">
                 <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
@@ -33,11 +35,11 @@
                 <input type="submit" style="left:240px;position:relative;" value="save" id="save">
                 <form method="post" enctype="multipart/form-data">
                     <label for="chooseFile">
-                    <img src="Nature landscape.jpg" id="image-show" style="width:200px;height:150px;display:block;left:180px;top:20px;position:relative;">
+                    <img src="Nature landscape.jpg" class="image-show" style="width:200px;height:150px;display:block;left:180px;top:20px;position:relative;">
                     </label>
                     <input type="file" id="chooseFile" name="chooseFile" accept="image/*">
                 </form>
-                <div class="fileInput">
+                <div class="FileInput">
                     <p>FILE NAME: </p>
                     <p id="fileName"></p>
                 </div>
@@ -46,127 +48,20 @@
             <div id="part2">
                 <span id="clickAddr"></span>
                 <span id="defaultAddr">서울특별시 중구 명동</span>
-                <div class="pic_line">
-                    <img src="Nature landscape.jpg" id="image-show" style="width:150px;height:100px;">
+                <div class="pic_line"> 
+                <!--사진 추가되는 공간-->   
+                <a href="#part3" onclick="hide(this)">
+                    <img src="plus.png" class="image-show" style="width:260px;height:200px;">
+                </a>
                 </div>
-                <div class="pic_line">
-                </div>
+            </div>
+            <div id="part3">
+                <img src="plus.png" class="image-show" style="width:200px;height:150px;;">
             </div>
         </div>
 
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c10bcbe1d13946345e9b5271c7587340&libraries=services"></script>
-        <script>
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-            mapOption = {
-                center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-                level: 14 // 지도의 확대 레벨
-            };  
-
-        // 지도를 생성합니다    
-        var map = new kakao.maps.Map(mapContainer, mapOption);
-        let chk = 0; 
-
-        // 주소-좌표 변환 객체를 생성합니다
-        var geocoder = new kakao.maps.services.Geocoder();
-
-        var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입니다
-        infowindow = new kakao.maps.InfoWindow({zindex:1}); // 클릭한 위치에 대한 주소를 표시할 인포윈도우입니다
-
-        const add_element = document.getElementById("add"); // add 버튼이 클릭했을 때 이벤트를 등록시키기 위해 사용하는 변수입니다
-        var part_1 = document.getElementById("part1"); // add 버튼이 클릭됐을 때 출력될 div를 위해 사용하는 변수입니다
-
-        // add 버튼을 누른 뒤 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
-        add_element.addEventListener("click", function(){
-            chk = 1; // add 클릭 시에만 지도에 정보를 추가할 수 있는 이벤트를 위해 add가 클릭됐는지 확인하는 변수입니다
-            kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-            searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-                if (status === kakao.maps.services.Status.OK && chk === 1) {
-                    part_1.style.display = "block";
-                    $("#part2").hide();
-                    var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-                    detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
-                    
-                    var content = '<div class="bAddr">' +
-                                    detailAddr + 
-                                '</div>';
-
-                    // 마커를 클릭한 위치에 표시합니다 
-                    marker.setPosition(mouseEvent.latLng);
-                    marker.setMap(map);
-
-                    // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
-                    infowindow.setContent(content);
-                    infowindow.open(map, marker);
-                }   
-            });
-            });
-        });
-
-        // 지도를 클릭했을 시 클릭되는 행정동 위치 정보를 넣습니다
-        kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-        searchAddrFromCoords(mouseEvent.latLng, function(result, status) {
-            if (status === kakao.maps.services.Status.OK) {
-                $("#defaultAddr").hide();
-
-                var infoDiv = document.getElementById('clickAddr');
-
-                for(var i = 0; i < result.length; i++) {
-                    // 행정동의 region_type 값은 'H' 이므로
-                    if (result[i].region_type === 'H') {
-                        infoDiv.innerHTML = result[i].address_name;
-                        break;
-                    }
-                }
-            }   
-            });
-        });
-
-        function searchAddrFromCoords(coords, callback) {
-            // 좌표로 행정동 주소 정보를 요청합니다
-            geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
-        }
-
-        function searchDetailAddrFromCoords(coords, callback) {
-            // 좌표로 법정동 상세 주소 정보를 요청합니다
-            geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
-        }
-
-        let imgData = localStorage.getItem('imgData');
-        $("#image-show").attr("src", imgData);
-
-        const fileInput = document.getElementById("chooseFile");
-        var result;
-
-        // 파일 교체
-        fileInput.onchange = () => {
-            const selectedFile = fileInput.files[0];
-            console.log(selectedFile);
-        };
-        $("#chooseFile").on("change", function (event){
-            var file = event.target.files[0];
-
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $("#image-show").attr("src", e.target.result);
-                result = e.target.result;
-                console.log(result);
-                localStorage.setItem('imgData', result);
-            }
-
-            reader.readAsDataURL(file);
-        });
-
-        const save_element = document.getElementById("save"); // save 버튼이 클릭했을 때 이벤트를 등록시키기 위해 사용하는 변수입니다
-        var part_2 = document.getElementById("part2"); // save 버튼이 클릭됐을 때 출력될 div를 위해 사용하는 변수입니다
-
-        // add 버튼을 누른 뒤 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
-        save_element.addEventListener("click", function(){
-            part_2.style.display = "block";
-            $("#part1").hide();
-            alert("저장되었습니다.");
-            chk = 0;
-        });
-
-        </script>
+        <script src="travel.js"></script>
+        <script src="memoryManagement"></script>
     </body>
 </html>
