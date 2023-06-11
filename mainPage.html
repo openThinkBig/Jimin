@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>메인 화면</title>
+ 
+  <link rel="stylesheet" href="mainPage.css">
+
+</head>
+
+<body>
+
+  <a href="#top" id="logo" style="position: fixed; z-index: 1; padding: 23px; margin-left: 10px;" >Think Big!</a>
+  <div class="wrapper" id="top" style="position: absolute;">
+    
+    <header class="page-header" >
+      <nav>
+        <h2 class="logo"> </h2>
+      
+        <ul>
+          <li></li>
+          <li></li>
+          <li>
+            <a href="#about">  About</a>
+          </li>
+          <li></li>
+          <li>
+            <a href="#information">Info</a>
+          </li>
+          <li></li>
+          <li>
+            <a href="#contactMember">Member</a>
+          </li>
+        </ul>
+        <button class="cta-contact" >Log in</button>
+      </nav>
+    </header>
+
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
+
+      :root {
+        --main-white-color: #f2f2f2;
+        --main-black-color: black;
+        --main-purple-color: #9e89b8;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      button {
+        background: none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      body {
+        font: 16px/1.5 "Dosis", sans-serif;
+        /*IE FIX*/
+        /*display: flex;
+  flex-direction: column;*/
+      }
+
+      /* CONTAINER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .wrapper>* {
+        padding: 20px;
+      }
+
+      /* HEADER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+      .page-header {
+        background: var(--main-white-color);
+      }
+
+      .page-header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .page-header ul {
+        display: flex;
+        order: 1;
+        width: 80%;
+        margin-top: 15px;
+      }
+
+      .page-header ul li:not(:last-child) {
+        padding-right: 15px;
+      }
+
+      .page-header .cta-contact {
+        font-family: inherit;
+        font-size: 1.2rem;
+        padding: 5px 18px;
+        border: 1px solid;
+        border-radius: 5px;
+      }
+
+
+      /* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+      @media screen and (min-width: 150px) {
+        .page-header ul {
+          width: auto;
+          margin-top: 0;
+          position: relative;
+        }
+
+        .page-header .cta-contact {
+          position: relative;
+          right: 10%;
+          order: 1;
+        }
+
+      }
+
+      @media screen and (min-width: 768px) {
+        body {
+          font-size: 18px;
+        }
+
+      }
+    </style>
+
+  </div>
+
+  <!-- <a href="" id="logo" style="position: absolute;" >Think Big!</a> -->
+
+  <div class="background" >
+    
+
+
+    <div class="header">
+      <div class="headerWrapper">
+        <h6>looking back on me</h6>
+        <h1>Web Diary <br> & A Living Record</h1>
+        <div class="circle blue"></div>
+        <div class="square red"></div>
+        <div class="triangle green"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 177.893 177.893">
+            <defs>
+              <style>
+                .a {
+                  fill: url(#a);
+                }
+
+                .b {
+                  filter: url(#b);
+                }
+              </style>
+              <linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0" stop-color="#3dbed5" />
+                <stop offset="1" stop-color="#3dd55a" />
+              </linearGradient>
+              <filter id="b" x="0" y="0" width="177.893" height="177.893" filterUnits="userSpaceOnUse">
+                <feOffset dx="3" dy="3" input="SourceAlpha" />
+                <feGaussianBlur stdDeviation="7.5" result="c" />
+                <feFlood flood-color="#3dd55a" flood-opacity="0.396" />
+                <feComposite operator="in" in2="c" />
+                <feComposite in="SourceGraphic" />
+              </filter>
+            </defs>
+            <g class="b" transform="matrix(1, 0, 0, 1, 0, 0)">
+              <path class="a" d="M136.727,21104.928l-50.222,100h100Z"
+                transform="translate(-8978.23 -19029.24) rotate(-25)" />
+            </g>
+          </svg></div>
+        <div class="circle orange"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- --------------------------- 작품 소개------------------------------------- -->
+
+  <div class="image1 first"></div>
+
+  <div class="text first" id="about" style="align-items: center;">
+
+    <div class="about section services">
+      <div class="sectionWrapper">
+        <h6>About</h6>
+        <h2>Why did we do this?</h2>
+        <p class="description">We don't have many opportunities to look back on ourselves.
+          We have to remember precious moments that are easy to pass in our busy lives.</p>
+        <br><br>
+
+        <div class="grid">
+          <div class="card">
+            <h3>A Plan</h3>
+            <p>To not forget what to do</p>
+          </div>
+          <div class="card">
+            <h3>Thinks</h3>
+            <p>A place where I can freely express my creativity and ideas</p>
+          </div>
+          <div class="card">
+            <h3>Travel</h3>
+            <p>Every place I plan and remember</p>
+          </div>
+          <div class="card">
+            <h3>Cultural Life</h3>
+            <p>Read and enjoy to my taste</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <!-- -------------------------------------   기능 소개------------------------------------------ -->
+
+
+
+  <div class="image2 first"></div>
+  <div class="text2 first" id="information">
+
+    <div class="info">
+      <div class="sectionWrapper" style="margin: 100px;">
+        <h6 style="margin: 0;">Info</h6>
+        <h2>what we offer</h2>
+        <p class="description">We divided the functions of our records into four categories. This website provides the following features.</p>
+
+      </div>
+
+      <!-- Home cards 1 -->
+      
+      <section class="home-cards" style="padding: 23px; padding-bottom: 90px;">
+        <div>
+          <img src="https://i.ibb.co/LZPVKq9/card1.png" alt="">
+          <h3>Memo</h3>
+          <p>
+            See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7
+            to put her plans into play.
+          </p>
+           
+        </div>
+
+
+        <div>
+          <img src="https://i.ibb.co/KjGFHVJ/card2.png" alt="" />
+          <h3>Check List</h3>
+          <p>
+            Express yourself powerfully with a thin, light, and elegant design,
+            faster performance, and up to 11.5 hours battery life.
+          </p>
+           
+        </div>
+
+
+        <div>
+          <img src="https://i.ibb.co/2cnshH6/card3.png" alt="" />
+          <h3>Travel Note</h3>
+          <p>
+            Buy an Xbox One X console and double your fun with a free select
+            extra controller. Starting at $349.
+          </p>
+           
+        </div>
+
+
+        <div>
+          <img src="https://i.ibb.co/G57P0Pb/card4.png" alt="" />
+          <h3>Movie/Book</h3>
+          <p>
+            Expect more. World class performance, with more privacy, more
+            productivity, and more value.
+          </p>
+          
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- -----------------------  세 번째 멤버 소개---------------------------- -->
+
+
+
+  <div class="image3 first"></div>
+  <div class="text first section services" id="contactMember">
+
+
+    <div class="container">
+
+      <div class="row heading">
+        <div class="col-md-6 col-md-offset-3">
+          <h2 class="text-center bottom-line">Meet Our Team</h2>
+          <p class="subheading text-center">Creative Nerds</p>
+          <br><br>
+        </div>
+      </div>
+
+      <div class="row team-row">
+
+        <div class="col-md-4 col-sm-6 team-wrap">
+          <div class="team-member text-center">
+            <div class="team-img">
+              <img src="http://deothemes.com/envato/enigma/html/img/team_1.jpg" alt="">
+              <div class="overlay">
+                <div class="team-details text-center">
+                  <p>
+                    Our web design team will spend time with our digital marketing team.
+                  </p>
+                  <div class="socials mt-20">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h6 class="team-title">Joon Hie Kim</h6>
+            <span>Front Developers</span>
+          </div>
+        </div>
+        <!-- end team member -->
+
+        <div class="col-md-4 col-sm-6 team-wrap">
+          <div class="team-member text-center">
+            <div class="team-img">
+              <img src="seojin.png" alt="" width="370px">
+              <div class="overlay">
+                <div class="team-details text-center">
+                  <p>
+                    Our web design team will spend time with our digital marketing team.
+                  </p>
+                  <div class="socials mt-20">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h6 class="team-title">Seo-Jin Lee</h6>
+            <span>Front Developers</span>
+          </div>
+        </div>
+        <!-- end team member -->
+
+        <div class="col-md-4 col-sm-6 team-wrap">
+          <div class="team-member last text-center">
+            <div class="team-img">
+              <img src="http://deothemes.com/envato/enigma/html/img/team_3.jpg" alt="">
+              <div class="overlay">
+                <div class="team-details text-center">
+                  <p>
+                    Our web design team will spend time with our digital marketing team.
+                  </p>
+                  <div class="socials mt-20">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h6 class="team-title">Ji-Min Ha</h6>
+            <span>Front Developers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="wrapper" id="wrap" >
+    <footer class="page-footer">
+      <medium>© Copyright 2023. All rights reserved.</medium>
+      <ul>
+        <li>
+          <a href="" target="_blank">
+            <i class="icon ion-logo-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank">
+            <i class="icon ion-logo-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank">
+            <i class="icon ion-logo-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank">
+            <i class="icon ion-logo-github"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
+ 
+ 
+  </div>
+
+
+
+
+
+
+
+  <script src="mainPage.js"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <link rel="stylesheet" href="book.css">
+    <link rel="stylesheet" href="menu.css">
+    <title>책 틀 </title>
+</head>
+<body>
+
+    <!-- 옆에 토글 메뉴 -->
+    <div class="menu">
+         <div class="profile container-fluid text-center">
+            <img id="profileImg" class="img-circle">
+            <p id="name"></p>
+        </div>
+        <div>
+            <p>MENU</p>
+        </div>
+        <ul>
+            <li><a href="#">DIARY</a></li>
+            <li><a href="#">WEEKLY</a></li>
+            <li><a href="#">MEMO</a></li>
+            <li><a href="#">TRAVEL</a></li>
+            <li><a href="#">BOOK</a></li>
+            <li><a href="#">MOVIE</a></li>
+        </ul>
+    </div>
+
+
+    <!-- 메뉴 html -->
+    <button class="menuBtn">
+          <img src="/images/menu.png" alt="" height="40px" style="margin-top: 10px; margin-left: 10px;">
+    </button>   
+
+
+
+
+    <!-- 여기서부터 내용 -->
+
+    <!-- Top "Book 헤드 부분" -->
+    <div class="book-body">
+        <div id = "searchGroup" class="container-fluid text-center bg-1">
+            <h1 id="TITLE">BOOK</h1>
+            <form class="form-inline">  
+                 <button type="button"  id="addBtn" onclick="add_div()" class="btn btn-default">+</button>
+            </form>
+        </div>  
+     
+
+
+        
+        <!-- 영화 추가할 때 정보 기입하는 파트 -->
+        <div id="part1" style="background-color: #eeeeee; margin: 50px; padding: 50px; display: none;">
+            <div style="float: left; width: 50%; padding: 10px;">
+
+                <!-- 영화 이름과 제출 버튼 -->
+                    <label for="tit" style="position:relative;">Book Name: </label>
+                    <input type="text" id="tit" style="position:relative;">
+                   <button  type="submit" id="btn" onclick="newBook()">save</button>
+
+                <!-- 이미지 가져오는 부분 -->
+                <div class="getImg">  
+                    <form method="post" enctype="multipart/form-data">
+                        <label for="chooseFile">
+                        <img src="https://posterworld.net/web/product/big/202105/58a77062c2c69ff9d1100409e4b0bbb2.jpg" class="image-show" style="width:400px;height:520px;display:block;left:10px;top:20px;position:relative;">
+                        </label>
+                        <br> <br> <br>
+                        <input type="file" id="chooseFile" name="chooseFile" accept="image/*">
+                    </form>
+                </div>
+            </div>
+
+            <!-- 별점 주기와 코멘트 텍스트 입력하는 오른쪽 div -->
+            <div id="side" style="float: left;  width: 50%; padding: 20px">
+
+                <!-- 별점 -->
+                <div class="rating" style="left: 110px; padding: 10px; margin-top: 70px; place-items: center;  overflow: hidden;">
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                </div>
+                <div class="fileInput" style="padding-top: 40px;">
+                    <p>FILE NAME: </p>
+                    <p id="fileName"></p>
+                </div>
+                <!-- 코멘트 -->
+                <textarea id="textarea" style="width:400px;height:370px;top:-35px;position:relative"></textarea>
+            
+            </div>
+
+            <!-- 영화 추가하는 div 삭제 버튼 -->
+            <input type="button" value="삭제" onclick="remove_div(this)" style="float:right">
+        
+        </div>
+
+
+
+    
+
+
+        <!-- 더미데이터 파트 -->
+        <!-- 그냥 값 다 넣어줘버려서 JSON 파일도 필요 없을 듯 -->
+        <div id = "bookGroup" class="container-fluid text-center bg-2 Wrapper" >
+
+            <div id="bookCover">
+                <div id="bookWrapper">
+                    
+                </div>
+            </div>         
+        </div>
+    </div> 
+
+</body>
+
+
+
+
+<script src="book.js"></script>
+
+
+</html>

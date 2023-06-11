@@ -1,0 +1,176 @@
+.menuWrapper{
+    background-color: aqua;
+    width: 300px;
+}
+
+.menuBtn {
+    position: absolute;
+    left: 250px;
+    background-color: rgb(255, 255, 255, 0);
+    border: none;
+}
+
+#line-wrapper {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+
+  .line {
+    background:#6d6d6d;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    width: 40px;
+    height: 7px; 
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    position: relative;
+  }
+
+.menu {
+    float: left;
+    background-color: lightgrey;
+    width: 250px;
+    height: 100vh;
+}
+
+.profile {
+    width: 250px;
+}
+
+.menu div {
+    padding-left: 10px;
+    margin-bottom: 0;
+}
+
+.menu div p {
+    color: rgb(93, 93, 93);
+    margin-bottom: 5px;
+    padding-top: 50px;
+}
+
+.class {
+    z-index: 10;
+}
+
+#profileImg {
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+#name {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    font-size: 20px;
+    color: rgb(93, 93, 93);
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+li a:hover {
+    text-decoration: none;
+    background-color: rgb(120, 120, 120);
+    color: white;
+}
+
+.menuBtn {
+ z-index: 1000;
+}
+
+#selectedMenu {
+    color: white;
+}
+
+.Wrapper {
+    width: 100%;
+    margin: 0;
+}
+
+.Wrapper h1 {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-weight: bold;
+    font-size: 50px;
+    background-color: #eeeeee;
+    color:rgb(72, 80, 184);
+    width: 99vw;
+}
+
+#addBtnWrapper {
+    text-align: left;
+    padding: 10px 0 15px 0;
+}
+
+#addBtn {
+    opacity: 0.5;
+    border: none;
+    font-size: 15px;
+    font-style: oblique;
+    height: 30px;
+    color: rgb(28, 159, 28);
+    margin-left: 110px;
+}
+
+#addBtn:hover {
+    opacity: 0.9;
+}
+
+#memoWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow-y: auto;
+    place-items: center;
+    justify-content: center;
+    padding: 20px 70px 0px 70px;
+    max-height: 70vh;
+}
+
+#memoWrapper div {
+    display: inline-block;
+}
+
+#memoWrapper textarea {
+    width: 200px;
+    height: 150px;
+    max-width: 200px;
+    word-wrap: break-word;
+    overflow: auto;
+    border: none;
+    resize: none;
+    background-color: rgb(255, 255, 255, 0);
+}
+
+#memoWrapper textarea {
+    outline: none;
+}
+
+#memoWrapper textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+#memoWrapper textarea::-webkit-scrollbar-thumb {
+    height: 30%;
+    background: #dfdfdf;
+    border-radius: 10px;
+}
+
+#memoWrapper textarea::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}

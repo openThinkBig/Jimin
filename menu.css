@@ -1,0 +1,97 @@
+.menuWrapper{
+    background-color: aqua;
+    width: 300px;
+}
+
+.menuBtn {
+    position: absolute;
+    left: 250px;
+    background-color: rgb(255, 255, 255, 0);
+    border: none;
+}
+
+#line-wrapper {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+
+  .line {
+    background:#6d6d6d;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    width: 40px;
+    height: 7px; 
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    position: relative;
+  }
+
+.menu {
+    float: left;
+    background-color: lightgrey;
+    width: 250px;
+    height: 100vh;
+}
+
+.profile {
+    width: 250px;
+}
+
+.menu div {
+    padding-left: 10px;
+    margin-bottom: 0;
+}
+
+.menu div p {
+    color: rgb(93, 93, 93);
+    margin-bottom: 5px;
+    padding-top: 50px;
+}
+
+.class {
+    z-index: 10;
+}
+
+#profileImg {
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+#name {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    font-size: 20px;
+    color: rgb(93, 93, 93);
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+li a:hover {
+    text-decoration: none;
+    background-color: rgb(120, 120, 120);
+    color: white;
+}
+
+.menuBtn {
+
+}
+
+#selectedMenu {
+    color: white;
+}

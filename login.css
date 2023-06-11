@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    font-family: 'Pretendard-Regular';
+}
+
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    width: 300px;
+}
+
+.text {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(93, 93, 93);
+    width: 180px;
+    height: 60px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    width: 300px;
+}
+
+#img {
+}
+
+#fileWrapper {
+    text-align: center;
+    width: 300px;
+}
+
+.uploadBtn {
+    margin: 10px 0 0 0;
+    width: 130px;
+    height: 30px;
+    background: #fff;
+    border: 1px solid rgb(77,77,77);
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploadBtn:hover {
+    background: rgb(77,77,77);
+    color: #fff;
+}
+  
+#file {
+    display: none;
+}
+
+#id {
+    width: 300px;
+    height: 35px;
+}
+
+
+
+form label {
+    font-size: 20px;
+    color: rgb(93, 93, 93);
+    text-align: left;
+}
+
+.btnWrapper {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#btn {
+    padding-top: 5px;
+    margin:auto;
+    background-color: white;
+    width: 130px;
+    height: 40px;
+    color: rgb(93, 93, 93);
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid rgb(93, 93, 93);
+    border-radius: 10px;
+}
+
+#btn:hover {
+    background-color:  rgb(136, 136, 136);
+    color: white;
+}

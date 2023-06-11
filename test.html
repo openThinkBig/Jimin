@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>영화시발</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style>
+		.bg-1 {
+			background-color: #a19f8d;
+			color: #ffffff;
+			padding-top: 60px;
+			padding-bottom: 60px;			
+		}
+		.bg-2 {
+			padding-top: 70px;
+			padding-bottom: 70px;			
+		}	
+		.bg-3{
+			background-color: #f6f6f6;
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+		.bg-4{			
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+		.icon {
+			color: #130805;
+			font-size: 50px;
+			margin: 25px 0;
+		}
+		.member{
+			border: 10px solid transparent;
+		}		
+		.member:hover{
+			border-color: #e2e2e2;
+		}
+		.navbar {			
+			margin-bottom: 0;
+		}
+		html {
+			scroll-behavior: smooth;
+		}
+		.glyphicon-star {
+			color: rgb(255, 215, 16);
+			font-size: 20px;
+		}
+
+	</style>
+</head>
+<body>
+    <!-- 검색창 -->
+	<div id = "about" class="container-fluid text-center bg-1">
+		<h1>MOVIE</h1>
+		<form class="form-inline">
+			<div class="form-group">
+				<input type="search" class="form-control" placeholder="name" required>
+			</div>
+			
+			<button type="button" class="btn btn-default">
+				<span class="glyphicon glyphicon-search"></span>  
+			</button>
+
+            <button type="button" class="btn btn-default">+</button>
+		</form>
+	</div>
+
+
+    
+<div id = "movieGroup" class="container-fluid text-center bg-2">
+		<div class="row">
+			<div class="col-sm-3">
+				<img src="https://marketplace.canva.com/EAFH3gODxw4/1/0/1131w/canva-black-%26-white-modern-mystery-forest-movie-poster-rLty9dwhGG4.jpg" class = "member" width="255" height="330" data-toggle="collapse" data-target="#member1">
+				<div id="member1" class="collapse">
+                    <h5><b>Wood</b></h5>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					
+                </div>
+			</div>
+			<div class="col-sm-3">
+				<img src="https://m.media-amazon.com/images/I/71Jxq2p5YWL._AC_UF894,1000_QL80_.jpg" class = "member" width="255" height="330" data-toggle="collapse" data-target="#member2">
+				<div id="member2" class="collapse">
+                    <h5><b>Joker</b></h5>
+                    <span class="glyphicon glyphicon-star"></span>
+                </div>
+			</div>
+			<div class="col-sm-3">
+				<img src="https://lumiere-a.akamaihd.net/v1/images/p_thelittlemermaid_2023_final_796_94759fcc.jpeg" class = "member" width="255" height="330" data-toggle="collapse" data-target="#member3">
+				<div id="member3" class="collapse">
+                    <h5><b>Little mermaid</b></h5>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+                </div>
+			</div>
+            <div class="col-sm-3">
+				<img src="https://cdn.shopify.com/s/files/1/0601/0883/2974/products/9781608873869_1.jpg?v=1648784581" class = "member" width="255" height="330" data-toggle="collapse" data-target="#member4">
+				<div id="member4" class="collapse">
+                    <h5><b>Hobbit</b></h5>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+                </div>
+			</div>
+		</div>
+	</div>
+
+	<div id = "newMovie" class="container-fluid text-center bg-3">
+		<h3>새 영화 추가 어떻게 하지?</h3>
+		<p>아 하기 싫다</p>
+		<div class="row">
+	</div>
+
+	
+</body>
+</html>

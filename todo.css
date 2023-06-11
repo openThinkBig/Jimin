@@ -1,0 +1,187 @@
+.menuWrapper{
+    background-color: aqua;
+    width: 300px;
+}
+
+.menuBtn {
+    position: absolute;
+    left: 250px;
+    background-color: rgb(255, 255, 255, 0);
+    border: none;
+}
+
+#line-wrapper {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+
+  .line {
+    background:#6d6d6d;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    width: 40px;
+    height: 7px; 
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    position: relative;
+  }
+
+.menu {
+    float: left;
+    background-color: lightgrey;
+    width: 250px;
+    height: 100vh;
+}
+
+.profile {
+    width: 250px;
+}
+
+.menu div {
+    padding-left: 10px;
+    margin-bottom: 0;
+}
+
+.menu div p {
+    color: rgb(93, 93, 93);
+    margin-bottom: 5px;
+    padding-top: 50px;
+}
+
+.class {
+    z-index: 10;
+}
+
+#profileImg {
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+#name {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    font-size: 20px;
+    color: rgb(93, 93, 93);
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+li a:hover {
+    text-decoration: none;
+    background-color: rgb(120, 120, 120);
+    color: white;
+}
+
+.menuBtn {
+
+}
+
+#selectedMenu {
+    color: white;
+}
+
+.Wrapper {
+    width: 100%;
+    margin: 0;
+}
+
+.Wrapper h1 {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-weight: bold;
+    font-size: 50px;
+    background-color: #eeeeee;
+    color:rgb(72, 80, 184);
+    width: 99vw;
+}
+
+#calendarWrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 20px 0 20px 0;
+}
+
+#calendar {
+    margin-left: 70px;
+    width: 200px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 17px;
+    font-style: oblique;
+    text-align: center;
+    border: none;
+    background-color: #eceaea;
+    border-radius: 5px;
+    opacity: 0.7;
+}
+
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: rgb(72, 80, 184);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#todoText {
+    margin-left: 70px;
+    width: 700px;
+    height: 30px;
+}
+
+#enterBtn {
+    margin: 0 0 0 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 32px;
+    color:rgb(72, 80, 184);
+    font-weight: bold;
+}
+
+#enterBtn:hover {
+    background-color:#e1e1e1;
+}
+
+#todoWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow-y: auto;
+    padding: 0;
+    max-height: 70vh;
+    margin-top: 10px;
+}
+
+#todoWrapper div p{
+    display: inline-block;
+}
+
+#todoWrapper div {
+    margin-left: 70px;
+}
+
+input:hover {
+    cursor: pointer;
+}
