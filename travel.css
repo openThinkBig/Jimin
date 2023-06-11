@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 .menuWrapper{
     background-color: aqua;
     width: 300px;
@@ -176,12 +177,42 @@ li a:hover {
     width: 99vw;
 }
 
-#add {
-    margin-left:280px;
-    margin-top: 20px;
-}
 
 #wrapper {
     margin-left:400px;
     margin-top: -130px;
+}
+
+#save, #add, #search_btn {
+    background-color: aliceblue;
+    color: #1e6b7b;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+#tit, #search, #text_are {
+  width: 250px;
+  height: 32px;
+  font-size: 15px;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 10px;
+}
+
+#default {
+    margin-top: -130px;
+    margin-left: -30px;
+    background-color: #eeeeee;
+    padding: 40px 50px 40px 50px;
+    border-radius: 10px;
 }

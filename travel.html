@@ -43,17 +43,24 @@
         </button>
         <div class="container-fluid total">
             <h1>Travel</h1>
-            <button id="add">add</button>
+            <button id="add" style="margin-left:280px;margin-top: 20px;">add</button>
             <div class="map_wrap">
                 <div id="map"></div>
+                <div id="default">
+                    <h4>여행 기록 기능<br/><br></h4>
+                    <p>1. add버튼을 클릭하고, 여행기록을 추가하고 지도의 위치를 클릭합니다.<br/><br></p>
+                    <p>2. 우측에 뜨는 화면을 통해 내용을 추가합니다.<br/><br></p>
+                    <p>3. 추가하고 싶은 여행 기록을 확인하고 싶을 시, 하단에 있는 검색바를 이용합니다.<br/><br></p>
+                    <p>4. 검색을 통해 나온 추억 사진들 중, 보고 싶은 여행 기록의 사진을 클릭합니다.<br/><br></p>
+                </div>
 
                 <div id="part1">
-                    <div id="clickAddr"><p id="addrTxt"></p></div>
+                    <div id="clickAddr"><h4 id="addrTxt"></h4></div>
                     <div>
                         <label for="tit">Title: </label>
                         <input type="text" id="tit">
                     </div>
-                    <input type="submit" value="save" id="save" style="position:absolute; margin-left:350px; margin-top:-30px">
+                    <input type="submit" value="save" id="save" style="position:absolute; margin-left:350px; margin-top:-37px">
                     <form method="post" enctype="multipart/form-data">
                         <label for="chooseFile">
                         <img src="Nature landscape.jpg" id="travleImg" class="image-show" style="width:200px;height:150px;display:block;margin-left:120px;margin-top:20px;">
@@ -64,14 +71,14 @@
                         <p>FILE NAME: </p>
                         <p id="fileName"></p>
                     </div>
-                    <textarea id="text_are" style="width:400px;height:210px;margin-top:-30px"></textarea>
+                    <textarea id="text_are" style="width:420px;height:210px;margin-top:-30px"></textarea>
                 </div>
 
             </div>
 
             <div id="wrapper">
-                <input type="text" id="search">
-                <button onclick="search()"> search </button>           
+                <input type="text" id="search" style="margin-left:-50px;">
+                <button onclick="search()" id="search_btn"> search </button>           
             </div>
             <div id="wrapperWrapper">
                 <!--사진추가되는곳-->
@@ -84,6 +91,5 @@
 
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c10bcbe1d13946345e9b5271c7587340&libraries=services"></script>
         <script src="travel.js"></script>
-        <script src="memoryManagement"></script>
     </body>
 </html>

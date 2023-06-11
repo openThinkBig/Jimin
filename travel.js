@@ -29,6 +29,7 @@
                 var marker = new kakao.maps.Marker({
                         position: mouseEvent.latLng
                     });
+                $('#default').css('display', 'none');
                 $('#part1').css('display', 'block');
 
                 $("#tit").val("");
@@ -116,6 +117,7 @@
     save_element.addEventListener("click", function(){
         infowindow.close();
         $('#part1').css('display', 'none');
+        $('#default').css('display', 'block');
         console.log("localName");
         console.log(localName);
         let localDatas = JSON.parse(localStorage.getItem(localName));
@@ -142,12 +144,15 @@
     let wrapper = document.getElementById("wrapperWrapper");
     let part = document.getElementById("part1");
     function search() {
+        $('#default').css('display', 'none');
         $("#part1").css({
             "display": "block",
         })
         $('#wrapperWrapper').children().remove();
         $("#wrapperWrapper").css({
             "display": "block",
+            "width" : "650px",
+            "height" : "450px"
         })
         $('#part1').children().remove();
 
@@ -168,7 +173,10 @@
             $(thumbnail).attr("class", "img");
             $(thumbnail).css({
                 "width": "200px",
-                "height": "100px",
+                "height": "150px",
+                "border-radius": "5px",
+                "margin-right" : "10px",
+                "margin-bottom" : "10px"
             })
             wrapper.appendChild(thumbnail);
         }
@@ -186,23 +194,28 @@
             })
 
             let infoContainer = document.createElement("div");
-            let titleInfo = document.createElement("h3");
+            let titleInfo = document.createElement("h4");
             titleInfo.innerHTML = regionData[id].title;
             infoContainer.appendChild(titleInfo);
+            $(infoContainer).css({
+                "margin-top" : "40px"
+            })
 
             let imgInfo = document.createElement("img");
             $(imgInfo).attr("src", regionData[id].img);
             $(imgInfo).css({
                 "width": "300px",
                 "height": "200px",
+                "border-radius": "5px",
+                "margin-left" : "100px"
             })
             infoContainer.appendChild(imgInfo);
 
             let contentInfo = document.createElement("p");
             $(contentInfo).css({
-                "width": "300px",
-                "height": "200px",
-                "background-color": "red",
+                "width": "500px",
+                "height": "250px",
+                "margin-top" : "20px"
             })
             contentInfo.innerHTML = regionData[id].content;
             infoContainer.appendChild(contentInfo);
